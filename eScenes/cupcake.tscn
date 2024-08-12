@@ -1,0 +1,138 @@
+[gd_scene load_steps=14 format=3 uid="uid://rbhk8wm6r71d"]
+
+[ext_resource type="Texture2D" uid="uid://b0l6rf8040hxx" path="res://cupcake points (2).png" id="1_f07x5"]
+[ext_resource type="Script" path="res://eScenes/cupcake.gd" id="1_rcsng"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kuvrh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0i3y"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(0, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2g7t"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(1200, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuby7"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(2400, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1uun"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(3600, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ke0wd"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(4800, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucih3"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(6000, 0, 1200, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6oujd"]
+atlas = ExtResource("1_f07x5")
+region = Rect2(7200, 0, 1200, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_akpge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0i3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2g7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuby7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1uun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ke0wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucih3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6oujd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucih3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0i3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2g7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0i3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2g7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0i3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2g7t")
+}],
+"loop": true,
+"name": &"Cupcake",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_gsd1j"]
+length = 3.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Cupcake"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q37eo"]
+_data = {
+"Cupcake": SubResource("Animation_gsd1j")
+}
+
+[node name="Cupcake" type="Area2D"]
+script = ExtResource("1_rcsng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kuvrh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(0.02948, 0.02948)
+sprite_frames = SubResource("SpriteFrames_akpge")
+animation = &"Cupcake"
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_q37eo")
+}
+autoplay = "Cupcake"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

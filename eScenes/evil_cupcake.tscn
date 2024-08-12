@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsc6keqr2ewxc"]
+
+[ext_resource type="Texture2D" uid="uid://b4ibxas4w0b2e" path="res://cuopcake creepy.png ee e e (1).png" id="1_gh3qa"]
+[ext_resource type="Script" path="res://eScenes/evil_cupcake.gd" id="1_qwupx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wi5as"]
+radius = 12.1655
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i86n6"]
+atlas = ExtResource("1_gh3qa")
+region = Rect2(413, 0, 413, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaw44"]
+atlas = ExtResource("1_gh3qa")
+region = Rect2(413, 240, 413, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xql6q"]
+atlas = ExtResource("1_gh3qa")
+region = Rect2(413, 480, 413, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr3l0"]
+atlas = ExtResource("1_gh3qa")
+region = Rect2(413, 720, 413, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6wte"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i86n6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaw44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xql6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr3l0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_ldofa"]
+length = 1.6
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i3are"]
+_data = {
+"default": SubResource("Animation_ldofa")
+}
+
+[node name="Evil Cupcake" type="Area2D"]
+script = ExtResource("1_qwupx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_wi5as")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.194064, 0.194064)
+sprite_frames = SubResource("SpriteFrames_t6wte")
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_i3are")
+}
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

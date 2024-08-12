@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccng3a7auy713"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p0dds"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="FedyysStand" type="Sprite2D" parent="."]
+position = Vector2(369, 51.625)
+scale = Vector2(11.6972, 3.31931)
+texture = SubResource("CompressedTexture2D_p0dds")
