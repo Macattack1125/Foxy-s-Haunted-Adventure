@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b78qjow156v14"
+path="res://.godot/imported/yt1s.com - NO COPYRIGHT Five nights at Freddys The Living Tombstone Song.mp3-0c3c03052112b0c3de7fe3ca642e815f.mp3str"
+
+[deps]
+
+source_file="res://eScenes/yt1s.com - NO COPYRIGHT Five nights at Freddys The Living Tombstone Song.mp3"
+dest_files=["res://.godot/imported/yt1s.com - NO COPYRIGHT Five nights at Freddys The Living Tombstone Song.mp3-0c3c03052112b0c3de7fe3ca642e815f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
