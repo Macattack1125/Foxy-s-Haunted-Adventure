@@ -1,6 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://elyuehs313tr"]
+[gd_scene load_steps=12 format=3 uid="uid://g4vvtgunekiy"]
 
 [ext_resource type="Texture2D" uid="uid://d2bupgo2f5tlj" path="res://Custom Edited - Five Nights at Freddys Customs - Purple Guy FNAF3 (1).png" id="1_2ocbc"]
+[ext_resource type="Script" path="res://eScenes/enemy.gd" id="1_udefi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jls22"]
+size = Vector2(20, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l5ju3"]
 atlas = ExtResource("1_2ocbc")
@@ -59,9 +63,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="Area2D"]
+script = ExtResource("1_udefi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_jls22")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w6yft")
-frame = 1
-frame_progress = 0.661053
+frame_progress = 0.0196154
+
+[node name="Timer" type="Timer" parent="."]
