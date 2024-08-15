@@ -589,3 +589,30 @@ position = Vector2(6367, 669)
 
 [node name="Cupcake33" parent="Points" instance=ExtResource("8_tvcnu")]
 position = Vector2(6401, 650)
+
+[node name="Cupcake34" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(1544, 381)
+
+[node name="Cupcake35" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(2738, 405)
+
+[node name="Cupcake36" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(2999, 462)
+
+[node name="Cupcake37" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(3364, 383)
+
+[node name="Cupcake38" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(3725, 525)
+
+[node name="Cupcake39" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(3670, 281)
+
+[node name="Cupcake40" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(4477, 396)
+
+[node name="Cupcake41" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(5497, 536)
+
+[node name="Cupcake42" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(6018, 220)

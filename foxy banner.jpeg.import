@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4esr3knrxfr2"
-path="res://.godot/imported/foxy banner.jpg-956ac38038ed70090c656c9cf2e5a00e.ctex"
+uid="uid://bode24iprvnad"
+path="res://.godot/imported/foxy banner.jpeg-f026f5721974b1886ea0108139dee034.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://foxy banner.jpg"
-dest_files=["res://.godot/imported/foxy banner.jpg-956ac38038ed70090c656c9cf2e5a00e.ctex"]
+source_file="res://foxy banner.jpeg"
+dest_files=["res://.godot/imported/foxy banner.jpeg-f026f5721974b1886ea0108139dee034.ctex"]
 
 [params]
 
