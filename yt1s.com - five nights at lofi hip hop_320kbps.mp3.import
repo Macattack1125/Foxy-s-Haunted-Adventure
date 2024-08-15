@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://1m00wfompwp7"
+path="res://.godot/imported/yt1s.com - five nights at lofi hip hop_320kbps.mp3-206792df672a6b25fdca20ef40e50fe3.mp3str"
+
+[deps]
+
+source_file="res://yt1s.com - five nights at lofi hip hop_320kbps.mp3"
+dest_files=["res://.godot/imported/yt1s.com - five nights at lofi hip hop_320kbps.mp3-206792df672a6b25fdca20ef40e50fe3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
