@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://elyuehs313tr"]
+
+[ext_resource type="Texture2D" uid="uid://d2bupgo2f5tlj" path="res://Custom Edited - Five Nights at Freddys Customs - Purple Guy FNAF3 (1).png" id="1_2ocbc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5ju3"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(0, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inome"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(365, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwqn8"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(730, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow0bn"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(1095, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqx6n"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(1460, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qxxm"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(1825, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okcdu"]
+atlas = ExtResource("1_2ocbc")
+region = Rect2(2190, 0, 365, 207)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6yft"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5ju3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inome")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwqn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow0bn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqx6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qxxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okcdu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w6yft")
+frame = 1
+frame_progress = 0.661053

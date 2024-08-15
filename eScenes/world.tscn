@@ -488,6 +488,11 @@ script = ExtResource("10_i388d")
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
 position = Vector2(706, 219)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4gelh")
+autoplay = true
+script = ExtResource("12_cetxr")
+
 [node name="Points" type="Node2D" parent="."]
 
 [node name="Cupcake3" parent="Points" instance=ExtResource("8_tvcnu")]
@@ -614,14 +619,9 @@ position = Vector2(3670, 281)
 position = Vector2(4477, 396)
 
 [node name="Cupcake41" parent="Points" instance=ExtResource("8_tvcnu")]
-position = Vector2(5497, 536)
+position = Vector2(5562, 527)
 
 [node name="Cupcake42" parent="Points" instance=ExtResource("8_tvcnu")]
 position = Vector2(6018, 220)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_4gelh")
-autoplay = true
-script = ExtResource("12_cetxr")
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
