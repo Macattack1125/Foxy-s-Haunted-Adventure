@@ -1,67 +1,89 @@
-[gd_scene load_steps=10 format=3 uid="uid://elyuehs313tr"]
+[gd_scene load_steps=13 format=3 uid="uid://elyuehs313tr"]
 
 [ext_resource type="Texture2D" uid="uid://d2bupgo2f5tlj" path="res://Custom Edited - Five Nights at Freddys Customs - Purple Guy FNAF3 (1).png" id="1_2ocbc"]
+[ext_resource type="Script" path="res://eScenes/enemy.gd" id="1_5b4ob"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5ju3"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytt84"]
+size = Vector2(20, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx0n3"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(0, 0, 365, 207)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_inome"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ntoj"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(365, 0, 365, 207)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dwqn8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug528"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(730, 0, 365, 207)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ow0bn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh7yr"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(1095, 0, 365, 207)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kqx6n"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_w8dfw"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(1460, 0, 365, 207)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qxxm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sup2q"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(1825, 0, 365, 207)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_okcdu"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dxp5"]
 atlas = ExtResource("1_2ocbc")
 region = Rect2(2190, 0, 365, 207)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_w6yft"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_aka37"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l5ju3")
+"texture": SubResource("AtlasTexture_cx0n3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_inome")
+"texture": SubResource("AtlasTexture_3ntoj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dwqn8")
+"texture": SubResource("AtlasTexture_ug528")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ow0bn")
+"texture": SubResource("AtlasTexture_jh7yr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kqx6n")
+"texture": SubResource("AtlasTexture_w8dfw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0qxxm")
+"texture": SubResource("AtlasTexture_sup2q")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_okcdu")
+"texture": SubResource("AtlasTexture_1dxp5")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_julkj"]
+radius = 66.0076
+
 [node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_5b4ob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ytt84")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_w6yft")
-frame = 1
-frame_progress = 0.661053
+sprite_frames = SubResource("SpriteFrames_aka37")
+frame = 5
+frame_progress = 0.218018
+
+[node name="DetectionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+shape = SubResource("CircleShape2D_julkj")
+
+[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
