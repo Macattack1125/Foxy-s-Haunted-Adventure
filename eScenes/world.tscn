@@ -289,11 +289,6 @@ scale = Vector2(2.79266, 3.11744)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 
-[node name="TileMap" type="TileMap" parent="."]
-position = Vector2(1, 0)
-tile_set = SubResource("TileSet_1tbrs")
-format = 2
-
 [node name="Layer0" type="TileMapLayer" parent="."]
 use_parent_material = true
 position = Vector2(1, 0)
