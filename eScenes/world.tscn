@@ -484,6 +484,6 @@ position = Vector2(5562, 527)
 position = Vector2(6018, 220)
 
 [node name="Enemy" parent="." instance=ExtResource("13_o4w50")]
-position = Vector2(349, 247)
+position = Vector2(350, 252)
 
 [connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]

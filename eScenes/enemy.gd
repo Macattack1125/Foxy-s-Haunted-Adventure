@@ -1,19 +1,16 @@
-extends CharacterBody2D
+extends Area2D
 
-@export var speed = 25
-var player_chase = false
-var player = null 
+var direction = 1 
 
-func _physics_process(delta):
-	if player_chase:
-		position += (player.positon - position) / speed
-		
-
-func _on_detection_area_body_entered(body):
-	player = body
-	player_chase = true 
+func _ready():
+	pass 
 
 
-func _on_detection_area_body_exited(body):
-	player = null
-	player_chase = false
+
+func _process(delta):
+	translate(Vector2.RIGHT * direction)
+	$AnimatedSprite2D.flip_h = direction < 0
+
+
+func _on_timer_timeout():
+	direction *= -1

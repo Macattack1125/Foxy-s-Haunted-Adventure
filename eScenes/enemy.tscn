@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://elyuehs313tr"]
+[gd_scene load_steps=12 format=3 uid="uid://elyuehs313tr"]
 
 [ext_resource type="Texture2D" uid="uid://d2bupgo2f5tlj" path="res://Custom Edited - Five Nights at Freddys Customs - Purple Guy FNAF3 (1).png" id="1_2ocbc"]
 [ext_resource type="Script" path="res://eScenes/enemy.gd" id="1_5b4ob"]
@@ -63,27 +63,21 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_julkj"]
-radius = 66.0076
-
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="Area2D" groups=["hurt"]]
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_5b4ob")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hurt"]]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ytt84")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_aka37")
+autoplay = "default"
 frame = 5
 frame_progress = 0.218018
 
-[node name="DetectionArea" type="Area2D" parent="."]
+[node name="Timer" type="Timer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
-shape = SubResource("CircleShape2D_julkj")
-
-[connection signal="body_entered" from="DetectionArea" to="." method="_on_detection_area_body_entered"]
-[connection signal="body_exited" from="DetectionArea" to="." method="_on_detection_area_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
