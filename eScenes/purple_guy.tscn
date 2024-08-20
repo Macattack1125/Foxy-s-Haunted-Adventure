@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbl2g2urh6xmf"]
+
+[ext_resource type="Texture2D" uid="uid://d2bupgo2f5tlj" path="res://Custom Edited - Five Nights at Freddys Customs - Purple Guy FNAF3 (1).png" id="1_b2kox"]
+[ext_resource type="Script" path="res://eScenes/purple_guy.gd" id="1_ef8y1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtydh"]
+size = Vector2(20, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vn3v7"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(0, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_882b2"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(365, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_misc2"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(730, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smhbm"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(1095, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0022"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(1460, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm8gm"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(1825, 0, 365, 207)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grbgd"]
+atlas = ExtResource("1_b2kox")
+region = Rect2(2190, 0, 365, 207)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkpol"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vn3v7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_882b2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_misc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smhbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0022")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bm8gm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grbgd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Purple Guy" type="CharacterBody2D" groups=["Hurt"]]
+script = ExtResource("1_ef8y1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_gtydh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bkpol")
+autoplay = "default"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
