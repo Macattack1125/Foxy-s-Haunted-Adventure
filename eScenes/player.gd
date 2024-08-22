@@ -83,7 +83,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func enemy_checker(enemy):
-	if enemy.is_in_group("enemy") and velocity.y > 0:
+	if enemy.is_in_group("Enemy") and velocity.y > 0:
 		enemy.die()
 		velocity.y = jump_velocity
 	elif enemy.is_in_group("Hurt"):

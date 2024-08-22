@@ -407,7 +407,7 @@ libraries = {
 [node name="Hitobx" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitobx"]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_vfncd")
 
 [connection signal="area_entered" from="Hitobx" to="." method="_on_hitobx_area_entered"]
