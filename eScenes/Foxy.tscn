@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b7w6flo8s2inr"]
+[gd_scene load_steps=37 format=3 uid="uid://b7w6flo8s2inr"]
 
 [ext_resource type="Script" path="res://eScenes/player.gd" id="1_2wopb"]
 [ext_resource type="Texture2D" uid="uid://cy2nlq3h6jwaw" path="res://image (2).png" id="2_awugx"]
@@ -205,7 +205,7 @@ animations = [{
 size = Vector2(6.5, 12.5)
 
 [sub_resource type="Animation" id="Animation_814hw"]
-length = 0.4
+length = 1.1
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -214,10 +214,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.833333, 1.06667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 0, 1, 0, 1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -380,6 +380,9 @@ _data = {
 "walk": SubResource("Animation_fmjn1")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfncd"]
+size = Vector2(7, 13)
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 0)
 collision_layer = 3
@@ -390,7 +393,7 @@ position = Vector2(0.276462, -0.83217)
 scale = Vector2(0.265967, 0.279338)
 sprite_frames = SubResource("SpriteFrames_nerbu")
 animation = &"hurt"
-frame_progress = 0.857457
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.25)
@@ -400,3 +403,12 @@ shape = SubResource("RectangleShape2D_e1vn6")
 libraries = {
 "": SubResource("AnimationLibrary_jfhrp")
 }
+
+[node name="Hitobx" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitobx"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_vfncd")
+
+[connection signal="area_entered" from="Hitobx" to="." method="_on_hitobx_area_entered"]
+[connection signal="body_entered" from="Hitobx" to="." method="_on_hitobx_body_entered"]

@@ -14,12 +14,12 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * SPEED
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	
-
 
 	move_and_slide()
 	$AnimatedSprite2D.flip_h = direction > 0
 
+func die():
+	queue_free()
 
 func _on_timer_timeout() -> void:
 	direction = direction * -1

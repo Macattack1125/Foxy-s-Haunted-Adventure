@@ -347,6 +347,13 @@ script = ExtResource("10_i388d")
 [node name="Node2D" type="Node2D" parent="CanvasLayer"]
 position = Vector2(706, 219)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("11_4gelh")
+volume_db = 2.178
+autoplay = true
+playback_type = 1
+script = ExtResource("12_cetxr")
+
 [node name="Points" type="Node2D" parent="."]
 
 [node name="Cupcake3" parent="Points" instance=ExtResource("8_tvcnu")]
@@ -478,14 +485,30 @@ position = Vector2(5562, 527)
 [node name="Cupcake42" parent="Points" instance=ExtResource("8_tvcnu")]
 position = Vector2(6018, 220)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_4gelh")
-volume_db = 2.178
-autoplay = true
-playback_type = 1
-script = ExtResource("12_cetxr")
+[node name="Enemies" type="Node2D" parent="." groups=["Enemy", "Hurt"]]
 
-[node name="Purple Guy" parent="." instance=ExtResource("13_lfomu")]
-position = Vector2(389, 252)
+[node name="Purple Guy" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(2462, 411)
 
-[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
+[node name="Purple Guy2" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(3462, 521)
+
+[node name="Purple Guy3" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(3458, 380)
+
+[node name="Purple Guy4" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(3969, 427)
+
+[node name="Purple Guy5" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(4374, 398)
+
+[node name="Purple Guy6" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(5120, 382)
+
+[node name="Purple Guy7" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(6311, 506)
+
+[node name="Purple Guy10" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(3023, 901)
+
+[connection signal="finished" from="CanvasLayer/AudioStreamPlayer2D" to="CanvasLayer/AudioStreamPlayer2D" method="_on_finished"]
