@@ -89,7 +89,7 @@ func enemy_checker(enemy):
 	elif enemy.is_in_group("Hurt"):
 		anim_state = state.HURT
 
-func _on_hitobx_area_entered(area: Area2D) -> void:
+func _on_hitobx_area_entered(area) -> void:
 	enemy_checker(area)
 
 

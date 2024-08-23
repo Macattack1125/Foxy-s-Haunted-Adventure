@@ -485,6 +485,9 @@ position = Vector2(5562, 527)
 [node name="Cupcake42" parent="Points" instance=ExtResource("8_tvcnu")]
 position = Vector2(6018, 220)
 
+[node name="Cupcake43" parent="Points" instance=ExtResource("8_tvcnu")]
+position = Vector2(3108, 551)
+
 [node name="Enemies" type="Node2D" parent="." groups=["Enemy", "Hurt"]]
 
 [node name="Purple Guy" parent="Enemies" instance=ExtResource("13_lfomu")]
@@ -510,5 +513,8 @@ position = Vector2(6311, 506)
 
 [node name="Purple Guy10" parent="Enemies" instance=ExtResource("13_lfomu")]
 position = Vector2(3023, 901)
+
+[node name="Purple Guy" parent="." instance=ExtResource("13_lfomu")]
+position = Vector2(354, 250)
 
 [connection signal="finished" from="CanvasLayer/AudioStreamPlayer2D" to="CanvasLayer/AudioStreamPlayer2D" method="_on_finished"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://eScenes/purple_guy.gd" id="1_ef8y1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtydh"]
-size = Vector2(20, 39)
+size = Vector2(23, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vn3v7"]
 atlas = ExtResource("1_b2kox")
@@ -66,11 +66,11 @@ animations = [{
 [node name="Purple Guy" type="CharacterBody2D" groups=["Enemy", "Hurt"]]
 script = ExtResource("1_ef8y1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy", "Hurt"]]
+position = Vector2(-0.5, 1.5)
 shape = SubResource("RectangleShape2D_gtydh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy", "Hurt"]]
 sprite_frames = SubResource("SpriteFrames_bkpol")
 autoplay = "default"
 

@@ -205,7 +205,7 @@ animations = [{
 size = Vector2(6.5, 12.5)
 
 [sub_resource type="Animation" id="Animation_814hw"]
-length = 1.1
+length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -230,6 +230,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["hurt"]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.433333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_sytdv"]
@@ -381,19 +395,18 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfncd"]
-size = Vector2(7, 13)
+size = Vector2(7.5, 13.5)
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 0)
 collision_layer = 3
 script = ExtResource("1_2wopb")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Hurt", "Player"]]
 position = Vector2(0.276462, -0.83217)
 scale = Vector2(0.265967, 0.279338)
 sprite_frames = SubResource("SpriteFrames_nerbu")
 animation = &"hurt"
-frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.25)
@@ -407,7 +420,7 @@ libraries = {
 [node name="Hitobx" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitobx"]
-position = Vector2(-1, 0)
+position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_vfncd")
 
 [connection signal="area_entered" from="Hitobx" to="." method="_on_hitobx_area_entered"]
