@@ -19,7 +19,9 @@ func _physics_process(delta: float) -> void:
 	$AnimatedSprite2D.flip_h = direction > 0
 
 func die():
+	GameManger.score +=50
 	queue_free()
+	
 
 func _on_timer_timeout() -> void:
 	direction = direction * -1
