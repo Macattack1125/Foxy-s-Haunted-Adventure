@@ -349,7 +349,7 @@ position = Vector2(706, 219)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("11_4gelh")
-volume_db = 1.0
+volume_db = -11.058
 autoplay = true
 playback_type = 1
 script = ExtResource("12_cetxr")
@@ -513,8 +513,5 @@ position = Vector2(6311, 506)
 
 [node name="Purple Guy10" parent="Enemies" instance=ExtResource("13_lfomu")]
 position = Vector2(3362, 903)
-
-[node name="Purple Guy8" parent="Enemies" instance=ExtResource("13_lfomu")]
-position = Vector2(354, 250)
 
 [connection signal="finished" from="CanvasLayer/AudioStreamPlayer2D" to="CanvasLayer/AudioStreamPlayer2D" method="_on_finished"]
