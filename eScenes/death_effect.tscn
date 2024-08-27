@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8ko5hiu64nq7"]
+[gd_scene load_steps=14 format=3 uid="uid://b8ko5hiu64nq7"]
 
 [ext_resource type="Texture2D" uid="uid://dwrleg7feinqk" path="res://pixelcut-export (1).png" id="1_2ainw"]
+[ext_resource type="Script" path="res://eScenes/death_effect.gd" id="2_cmpe8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7apat"]
 atlas = ExtResource("1_2ainw")
@@ -83,8 +84,12 @@ animations = [{
 "speed": 25.0
 }]
 
-[node name="Death effect" type="AnimatedSprite2D"]
+[node name="Explosion" type="AnimatedSprite2D"]
+position = Vector2(-4, -1.90735e-06)
+scale = Vector2(0.263542, 0.263542)
 sprite_frames = SubResource("SpriteFrames_v2dfh")
 autoplay = "default"
-frame = 10
-frame_progress = 1.0
+frame = 1
+script = ExtResource("2_cmpe8")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
