@@ -349,7 +349,7 @@ position = Vector2(706, 219)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="CanvasLayer"]
 stream = ExtResource("11_4gelh")
-volume_db = 2.178
+volume_db = 1.0
 autoplay = true
 playback_type = 1
 script = ExtResource("12_cetxr")
