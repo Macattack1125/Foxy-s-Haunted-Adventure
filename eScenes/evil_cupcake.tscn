@@ -86,7 +86,6 @@ shape = SubResource("CircleShape2D_wi5as")
 position = Vector2(0, -2)
 scale = Vector2(0.194064, 0.194064)
 sprite_frames = SubResource("SpriteFrames_t6wte")
-frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
