@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://ciconc00oj7go"]
+[gd_scene load_steps=22 format=4 uid="uid://ciconc00oj7go"]
 
 [ext_resource type="PackedScene" uid="uid://b7w6flo8s2inr" path="res://eScenes/Foxy.tscn" id="1_ol3wk"]
 [ext_resource type="Texture2D" uid="uid://dfk0e5lv41ptn" path="res://Assets/Dungeon Tile Set/Dungeon Tile Set.png" id="2_jjtht"]
@@ -280,6 +280,18 @@ terrain_set_0/terrain_2/color = Color(0.440085, 0.920617, 0.67432, 1)
 sources/1 = SubResource("TileSetAtlasSource_5wwmd")
 sources/2 = SubResource("TileSetAtlasSource_ei45y")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26cx4"]
+size = Vector2(3702, 124.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s37jx"]
+size = Vector2(1461, 83.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bg82"]
+size = Vector2(3020, 102.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eftfa"]
+size = Vector2(1454, 37)
+
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ol3wk")]
@@ -520,34 +532,52 @@ position = Vector2(3362, 903)
 [node name="SpikeTrap" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(3145, 426)
 
-[node name="SpikeTrap" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap2" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(3227, 922)
 
-[node name="SpikeTrap2" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap3" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(3301, 922)
 
-[node name="SpikeTrap3" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap4" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(3152, 922)
 
-[node name="SpikeTrap4" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap5" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(4138, 410)
 
-[node name="SpikeTrap5" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap6" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(4601, 410)
 
-[node name="SpikeTrap6" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap7" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(6005, 666)
 
-[node name="SpikeTrap7" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap8" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(5800, 346)
 
-[node name="SpikeTrap8" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap9" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(2134, 426)
 
-[node name="SpikeTrap9" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap10" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(2102, 426)
 
-[node name="SpikeTrap10" parent="." instance=ExtResource("14_nfj11")]
+[node name="SpikeTrap11" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(2166, 426)
+
+[node name="DEATH" type="Area2D" parent="." groups=["Hurt"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DEATH" groups=["Hurt"]]
+position = Vector2(915, 683.75)
+shape = SubResource("RectangleShape2D_26cx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DEATH" groups=["Hurt"]]
+position = Vector2(2676, 1028.25)
+shape = SubResource("RectangleShape2D_s37jx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DEATH" groups=["Hurt"]]
+position = Vector2(5517, 826)
+shape = SubResource("RectangleShape2D_5bg82")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DEATH"]
+position = Vector2(4745, 615.5)
+shape = SubResource("RectangleShape2D_eftfa")
 
 [connection signal="finished" from="CanvasLayer/AudioStreamPlayer2D" to="CanvasLayer/AudioStreamPlayer2D" method="_on_finished"]
