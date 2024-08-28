@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cka8dne6a5d4q"]
+[gd_scene load_steps=6 format=3 uid="uid://cka8dne6a5d4q"]
 
 [ext_resource type="Script" path="res://eScenes/Start.gd" id="1_phk22"]
 [ext_resource type="Texture2D" uid="uid://bode24iprvnad" path="res://foxy banner.jpeg" id="1_uy27h"]
 [ext_resource type="Script" path="res://eScenes/Quit.gd" id="2_2dsqo"]
+[ext_resource type="Script" path="res://eScenes/options.gd" id="3_7jib2"]
 [ext_resource type="AudioStream" uid="uid://dmqae3xcfpskg" path="res://Assets/music.mp3" id="6_nqq7b"]
 
 [node name="Menu" type="Node2D"]
@@ -67,6 +68,7 @@ offset_bottom = -162.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "Options"
+script = ExtResource("3_7jib2")
 
 [node name="Quit" type="Button" parent="Camera2D/CanvasLayer/Control"]
 layout_mode = 1
@@ -83,6 +85,27 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Quit"
 script = ExtResource("2_2dsqo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera2D/CanvasLayer/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -8.0
+offset_right = 150.5
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/CanvasLayer/Control/MarginContainer"]
+layout_mode = 2
+
+[node name="Sound" type="HSlider" parent="Camera2D/CanvasLayer/Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Camera2D"]
 stream = ExtResource("6_nqq7b")
