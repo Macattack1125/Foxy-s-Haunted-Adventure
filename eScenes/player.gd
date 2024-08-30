@@ -22,6 +22,7 @@ func reset():
 	set_physics_process(true)
 	anim_state = state.IDEL
 	GameManger.score -=100
+	GameManger.score = max(GameManger.score, 0)
 
 func update_state():
 	if anim_state == state.HURT:

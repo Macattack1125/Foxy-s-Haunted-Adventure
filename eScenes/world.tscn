@@ -519,14 +519,29 @@ position = Vector2(3969, 427)
 [node name="Purple Guy5" parent="Enemies" instance=ExtResource("13_lfomu")]
 position = Vector2(4374, 398)
 
-[node name="Purple Guy6" parent="Enemies" instance=ExtResource("13_lfomu")]
-position = Vector2(5120, 382)
-
 [node name="Purple Guy7" parent="Enemies" instance=ExtResource("13_lfomu")]
 position = Vector2(6311, 506)
 
-[node name="Purple Guy10" parent="Enemies" instance=ExtResource("13_lfomu")]
-position = Vector2(3362, 903)
+[node name="Shadow Freddy" parent="Enemies" instance=ExtResource("15_jx7gy")]
+position = Vector2(3343, 902)
+
+[node name="Shadow Freddy2" parent="Enemies" instance=ExtResource("15_jx7gy")]
+position = Vector2(3725, 373)
+
+[node name="Shadow Freddy3" parent="Enemies" instance=ExtResource("15_jx7gy")]
+position = Vector2(2252, 406)
+
+[node name="Shadow Freddy4" parent="Enemies" instance=ExtResource("15_jx7gy")]
+position = Vector2(4898, 373)
+
+[node name="Shadow Freddy5" parent="Enemies" instance=ExtResource("15_jx7gy")]
+position = Vector2(5075, 374)
+
+[node name="Purple Guy6" parent="Enemies" instance=ExtResource("13_lfomu")]
+position = Vector2(5562, 365)
+
+[node name="SpikeTrap" parent="Enemies" instance=ExtResource("14_nfj11")]
+position = Vector2(751, 393)
 
 [node name="Traps" type="Node2D" parent="."]
 
@@ -563,6 +578,9 @@ position = Vector2(2102, 426)
 [node name="SpikeTrap11" parent="Traps" instance=ExtResource("14_nfj11")]
 position = Vector2(2166, 426)
 
+[node name="SpikeTrap12" parent="Traps" instance=ExtResource("14_nfj11")]
+position = Vector2(1081, 330)
+
 [node name="DEATH" type="Area2D" parent="." groups=["Hurt"]]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="DEATH" groups=["Hurt"]]
@@ -580,8 +598,5 @@ shape = SubResource("RectangleShape2D_5bg82")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="DEATH"]
 position = Vector2(4745, 615.5)
 shape = SubResource("RectangleShape2D_eftfa")
-
-[node name="Shadow Freddy" parent="." instance=ExtResource("15_jx7gy")]
-position = Vector2(393, 245)
 
 [connection signal="finished" from="CanvasLayer/AudioStreamPlayer2D" to="CanvasLayer/AudioStreamPlayer2D" method="_on_finished"]
