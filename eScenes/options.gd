@@ -4,6 +4,4 @@ extends Button
 @onready var buttons = [$"../Start", $".",$"../Quit"]
 
 func _pressed() -> void:
-	for button in buttons:
-		button.visible = !button.visible
-	margin_container.visible = !margin_container.visible
+	get_tree().change_scene_to_file("res://eScenes/optionss.tscn")

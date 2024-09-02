@@ -1,12 +1,37 @@
-[gd_scene format=3 uid="uid://bwwy1jtpwknyd"]
+[gd_scene load_steps=5 format=3 uid="uid://bwwy1jtpwknyd"]
 
-[node name="Optionss" type="Control"]
+[ext_resource type="Script" path="res://eScenes/optionss.gd" id="1_5nxt1"]
+[ext_resource type="Script" path="res://eScenes/back.gd" id="2_iven6"]
+[ext_resource type="Texture2D" uid="uid://dgpqdr1e2ux7v" path="res://yes.png" id="2_mtbo0"]
+[ext_resource type="Texture2D" uid="uid://deguljn53fo7c" path="res://HELPYSSS.webp" id="3_b81ro"]
+
+[node name="Options menu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5nxt1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.138
+anchor_right = -0.138
+offset_left = 158.976
+offset_right = 1309.98
+offset_bottom = 647.0
+texture = ExtResource("2_mtbo0")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 210.0
+offset_right = 1099.0
+offset_bottom = 601.0
+texture = ExtResource("3_b81ro")
+expand_mode = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -15,3 +40,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Volume 
+"
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 599.0
+offset_right = 96.0
+offset_bottom = 640.0
+text = "Back"
+script = ExtResource("2_iven6")
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
