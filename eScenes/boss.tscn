@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdupomb41mrcp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l1mvv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qiea5"]
+
+[node name="Boss" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l1mvv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qiea5")
+frame_progress = 0.963536
