@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=3 uid="uid://b7w6flo8s2inr"]
+[gd_scene load_steps=38 format=3 uid="uid://b7w6flo8s2inr"]
 
 [ext_resource type="Script" path="res://eScenes/player.gd" id="1_2wopb"]
 [ext_resource type="Texture2D" uid="uid://cy2nlq3h6jwaw" path="res://image (2).png" id="2_awugx"]
 [ext_resource type="Texture2D" uid="uid://bx4tt6tuxgtky" path="res://damage roxy.png" id="3_umylw"]
+[ext_resource type="Texture2D" uid="uid://dbpuv7ryila7q" path="res://light.png" id="4_3hs3a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2j3gg"]
 atlas = ExtResource("2_awugx")
@@ -422,6 +423,11 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitobx"]
 position = Vector2(0, -0.25)
 shape = SubResource("RectangleShape2D_vfncd")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 0.88
+texture = ExtResource("4_3hs3a")
+texture_scale = 0.55
 
 [connection signal="area_entered" from="Hitobx" to="." method="_on_hitobx_area_entered"]
 [connection signal="body_entered" from="Hitobx" to="." method="_on_hitobx_body_entered"]
