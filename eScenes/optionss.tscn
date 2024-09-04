@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwwy1jtpwknyd"]
+[gd_scene load_steps=7 format=3 uid="uid://bwwy1jtpwknyd"]
 
 [ext_resource type="Script" path="res://eScenes/optionss.gd" id="1_5nxt1"]
 [ext_resource type="Script" path="res://eScenes/back.gd" id="2_iven6"]
 [ext_resource type="Texture2D" uid="uid://dgpqdr1e2ux7v" path="res://yes.png" id="2_mtbo0"]
 [ext_resource type="Texture2D" uid="uid://deguljn53fo7c" path="res://HELPYSSS.webp" id="3_b81ro"]
+[ext_resource type="Script" path="res://eScenes/volume.gd" id="4_dtskn"]
+[ext_resource type="AudioStream" uid="uid://dmqae3xcfpskg" path="res://Assets/music.mp3" id="6_hpg2a"]
 
 [node name="Options menu" type="Control"]
 layout_mode = 3
@@ -55,9 +57,13 @@ text = "Volume
 [node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer/label"]
 layout_mode = 2
 offset_top = 27.0
-offset_right = 663.0
+offset_right = 1087.0
 offset_bottom = 58.0
 scale = Vector2(1.04167, 0.75)
+max_value = 1.0
+step = 0.001
+script = ExtResource("4_dtskn")
+bus_name = "Master"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
@@ -67,5 +73,10 @@ offset_right = 96.0
 offset_bottom = 640.0
 text = "Back"
 script = ExtResource("2_iven6")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_hpg2a")
+volume_db = 3.939
+autoplay = true
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/label/Volume" to="." method="_on_volume_value_changed"]
