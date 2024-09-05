@@ -18,11 +18,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var start_pos = global_position
 
 func reset():
-	global_position = start_pos
-	set_physics_process(true)
-	anim_state = state.IDEL
-	GameManger.score -=100
-	GameManger.score = max(GameManger.score, 0)
+	
+	GameManger.score = 0
+	get_tree().reload_current_scene()
 
 func update_state():
 	if anim_state == state.HURT:
