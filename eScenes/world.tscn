@@ -630,5 +630,7 @@ position = Vector2(4745, 615.5)
 shape = SubResource("RectangleShape2D_eftfa")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color(0, 0, 0, 1)
 
 [connection signal="finished" from="CanvasLayer/AudioStreamPlayer2D" to="CanvasLayer/AudioStreamPlayer2D" method="_on_finished"]
