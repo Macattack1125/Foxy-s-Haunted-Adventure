@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkrcfvjgi3fk1"]
+
+[ext_resource type="Texture2D" uid="uid://c75gbpux8sm7u" path="res://golden fredyyyyy'.png" id="1_63dex"]
+[ext_resource type="Script" path="res://eScenes/golden_freddy.gd" id="1_ulo1l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nml65"]
+size = Vector2(65, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yre50"]
+atlas = ExtResource("1_63dex")
+region = Rect2(0, 0, 400, 492)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6hdb"]
+atlas = ExtResource("1_63dex")
+region = Rect2(400, 0, 400, 492)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c572n"]
+atlas = ExtResource("1_63dex")
+region = Rect2(800, 0, 400, 492)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_coj6w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yre50")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6hdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c572n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 17.0
+}]
+
+[node name="golden Freddy" type="Area2D"]
+script = ExtResource("1_ulo1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_nml65")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, 0)
+scale = Vector2(0.215, 0.205285)
+sprite_frames = SubResource("SpriteFrames_coj6w")
+autoplay = "default"
+frame_progress = 0.913277
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
