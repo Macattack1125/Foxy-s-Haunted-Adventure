@@ -398,7 +398,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vfncd"]
 size = Vector2(7.5, 13.5)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(1, 0)
 collision_layer = 3
 script = ExtResource("1_2wopb")
