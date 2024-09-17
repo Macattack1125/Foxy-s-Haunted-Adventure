@@ -48,7 +48,8 @@ position = Vector2(1, 1)
 scale = Vector2(0.205, 0.198171)
 sprite_frames = SubResource("SpriteFrames_coj6w")
 autoplay = "default"
-frame_progress = 0.757766
+frame = 2
+frame_progress = 0.999237
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

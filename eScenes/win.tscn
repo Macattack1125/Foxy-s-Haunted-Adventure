@@ -51,4 +51,5 @@ script = ExtResource("2_jiwdh")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Camera2D"]
 stream = ExtResource("4_cw32s")
+volume_db = 0.788
 autoplay = true

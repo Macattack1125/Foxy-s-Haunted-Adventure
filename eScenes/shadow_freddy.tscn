@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://eScenes/shadow_freddy.gd" id="1_gpelv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vyml1"]
-size = Vector2(31, 57)
+size = Vector2(31, 61)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pkb7u"]
 atlas = ExtResource("1_bddyt")
@@ -60,7 +60,7 @@ animations = [{
 script = ExtResource("1_gpelv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemy", "Hurt"]]
-position = Vector2(6.5, -1.5)
+position = Vector2(6.5, -3.5)
 shape = SubResource("RectangleShape2D_vyml1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["Enemy", "Hurt"]]
