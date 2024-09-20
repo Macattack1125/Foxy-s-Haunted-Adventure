@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://rbhk8wm6r71d"]
 
-[ext_resource type="Texture2D" uid="uid://b0l6rf8040hxx" path="res://cupcake points (2).png" id="1_f07x5"]
+[ext_resource type="Texture2D" uid="uid://b0l6rf8040hxx" path="res://Assets/cupcake points (2).png" id="1_f07x5"]
 [ext_resource type="Script" path="res://eScenes/cupcake.gd" id="1_rcsng"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kuvrh"]
