@@ -13,32 +13,31 @@ var anim_state = state.IDEL
 @onready var animator = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") # Gets gravity on the player
 @onready var start_pos = global_position
 
-func reset():
+func reset(): # This function clears the current score upon death
 	
-	GameManger.score = 0
-	get_tree().reload_current_scene()
+	GameManger.score = 0 # Score set zero
+	get_tree().reload_current_scene() # This code here reloads the current scene which also respawns enemies
 
-func update_state():
+func update_state(): # This function updates the player state which then can be used for changing animations 
 	if anim_state == state.HURT:
 		return
 	if anim_state == state.HURT:
 		return
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
-			anim_state = state.IDEL
+			anim_state = state.IDEL # For idle animation
 		elif velocity.x != 0:
-			anim_state = state.RUNNING
+			anim_state = state.RUNNING # For run/walk animation
 	else:
 		if velocity.y < 0:
-			anim_state = state.JUMPUP
+			anim_state = state.JUMPUP # Animation for when jumping
 		else:
-			anim_state = state.JUMPDOWN
+			anim_state = state.JUMPDOWN # Animation for when falling
 
-func update_animation(direcion):
+func update_animation(direcion): # This updates the animation based off of the direction moving and the current state
 	if direcion > 0:
 		animator.flip_h = false
 	elif  direcion <0:
@@ -59,17 +58,13 @@ func update_animation(direcion):
 			animation_player.play("hurt")
 
 
-func _physics_process(delta):
+func _physics_process(delta): # This here handles the movement and jumping
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = jump_velocity
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		if Input.is_action_pressed("run"):
@@ -82,16 +77,16 @@ func _physics_process(delta):
 	update_animation(direction)
 	move_and_slide()
 
-func enemy_checker(enemy):
+func enemy_checker(enemy): # Checks if the enemy is actually an enemy
 	if enemy.is_in_group("Enemy") and velocity.y > 0:
 		enemy.die()
 		velocity.y = jump_velocity
 	elif enemy.is_in_group("Hurt"):
 		anim_state = state.HURT
 
-func _on_hitobx_area_entered(area) -> void:
+func _on_hitobx_area_entered(area) -> void: # Detects an object entering the hitbox
 	enemy_checker(area)
 
 
-func _on_hitobx_body_entered(body: Node2D) -> void:
+func _on_hitobx_body_entered(body: Node2D) -> void: # Also detects an object entering the hitbox
 	enemy_checker(body)
